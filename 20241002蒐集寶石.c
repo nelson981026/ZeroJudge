@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 //dic -> 0right 1down 2left 3up
 void turn(int *x){
 	*x=(*x+1)%4;
