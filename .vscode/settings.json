@@ -60,6 +60,6 @@
     "random": "c",
     "string.h": "c",
     "limits": "c",
-    "stdio.h": "c",
+    "stdio.h": "c"
   }
 }

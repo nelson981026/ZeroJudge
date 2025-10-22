@@ -1,25 +1,29 @@
 #include <stdio.h>
 int main(void) {
-  int n,i;
+  int n,i,f;
   while(scanf("%d",&n)!=EOF){
     if(n<2){
-      printf("獶借计\n");
+      printf("It's not a prime!!!\n");
     }
     else if(n%2){
+      f=0;
       for(i=3;i*i<=n;i+=2){
         if(!(n%i)){
-          printf("獶");
+          printf("It's not a prime!!!\n");
+          f=1;
           break;
         }
       }
-      printf("借计\n");
+      if(f==0){
+        printf("It's a prime!!!\n");
+      }
     }
     else{
       if(n>2){
-        printf("獶借计\n");
+        printf("It's not a prime!!!\n");
       }
       else{
-        printf("借计\n");
+        printf("It's a prime!!!\n");
       }
     }
   }
