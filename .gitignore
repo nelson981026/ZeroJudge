@@ -1,6 +1,5 @@
 # VS Code specific files
 .vscode/
-.json
 
 # Prerequisites
 *.d
