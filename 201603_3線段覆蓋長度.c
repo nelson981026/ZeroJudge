@@ -1,4 +1,3 @@
-#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 int main(void) {
@@ -14,7 +13,7 @@ int main(void) {
             max = temp[i][1];
         }
     }
-    bool arr[max - min + 1];
+    char arr[max - min + 1];
     memset(arr, 0, sizeof(arr));
     for (i = 0; i < n; ++i) {
         if (temp[i][1] > temp[i][0]) {
