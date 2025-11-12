@@ -11,10 +11,21 @@
 （注意輸出時所有英文字母均為大寫字母。）*/
 
 int main(void) {
-  int a,b,c,i=0;
-  scanf("%d %d %d",&a,&b,&c);
-  if((a&&b)==c){  printf("AND\n");  i++;}
-  if((a||b)==c){  printf("OR\n");  i++;}
-  if((((a||b)==1)&&((a&&b)==0))==c){  printf("XOR\n");  i++;}
-  if(i==0)  printf("IMPOSSIBLE\n");
-  return 0;}
+    int a, b, c, i = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    if ((a && b) == c) {
+        printf("AND\n");
+        i++;
+    }
+    if ((a || b) == c) {
+        printf("OR\n");
+        i++;
+    }
+    if ((((a || b) == 1) && ((a && b) == 0)) == c) {
+        printf("XOR\n");
+        i++;
+    }
+    if (i == 0)
+        printf("IMPOSSIBLE\n");
+    return 0;
+}
