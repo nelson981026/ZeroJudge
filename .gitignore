@@ -1,6 +1,7 @@
 # VS Code specific files
 .vscode/
 .clang-format
+.pdf
 
 #google drive
 desktop.ini
