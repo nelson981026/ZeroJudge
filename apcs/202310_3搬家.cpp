@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int m, n, id;
-vector<string> mp;
+vector<string> h;
 vector<vector<int>> group;
 vector<int> cnt;
 static unordered_set<char> l{'H', '7', 'X', 'J'};
@@ -13,15 +13,15 @@ void search(pair<int, int> p) {
     if (group[p.first][p.second] > 0)
         return;
     group[p.first][p.second] = id;
-    char tmp = mp[p.first][p.second];
-    mp[p.first][p.second] = '0';
-    if (p.second - 1 >= 0 && l.count(tmp) && r.count(mp[p.first][p.second - 1]))
+    char tmp = h[p.first][p.second];
+    h[p.first][p.second] = '0';
+    if (p.second - 1 >= 0 && l.count(tmp) && r.count(h[p.first][p.second - 1]))
         search({p.first, p.second - 1});
-    if (p.second + 1 < n && r.count(tmp) && l.count(mp[p.first][p.second + 1]))
+    if (p.second + 1 < n && r.count(tmp) && l.count(h[p.first][p.second + 1]))
         search({p.first, p.second + 1});
-    if (p.first - 1 >= 0 && u.count(tmp) && d.count(mp[p.first - 1][p.second]))
+    if (p.first - 1 >= 0 && u.count(tmp) && d.count(h[p.first - 1][p.second]))
         search({p.first - 1, p.second});
-    if (p.first + 1 < m && d.count(tmp) && u.count(mp[p.first + 1][p.second]))
+    if (p.first + 1 < m && d.count(tmp) && u.count(h[p.first + 1][p.second]))
         search({p.first + 1, p.second});
 }
 
@@ -30,15 +30,15 @@ int main() {
     id = 0;
     cnt.emplace_back(0);
     cin >> m >> n;
-    mp.resize(m);
+    h.resize(m);
     group.resize(m);
     for (int x = 0; x < m; ++x) {
-        cin >> mp[x];
+        cin >> h[x];
         group[x].resize(n);
     }
     for (int x = 0; x < m; ++x) {
         for (int y = 0; y < n; ++y) {
-            if (mp[x][y] != '0') {
+            if (h[x][y] != '0') {
                 ++id;
                 cnt.emplace_back(0);
                 search({x, y});
